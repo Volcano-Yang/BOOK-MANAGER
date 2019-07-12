@@ -1,0 +1,46 @@
+<view class="top" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <text>图书角MANAGER</text>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{!disabled}}">
+  <button class="btn_scan" bindtap='getScancode'>扫描图书条形码</button>
+  <view style="font-size:18px;text-align:center; margin:20rpx;">或</view>
+  <button class="btn_input" bindtap='showModal'>手动输入</button>
+</view>
+<view class="content" wx:if="{{disabled}}">
+  <image class="img" src="{{picture}}"  style='margin-top:30rpx;'/>
+  <view class="info-box">
+    <view>
+      <text>{{title}}</text>
+    </view>
+    <view>
+      <text>{{author}}</text>
+    </view>
+    <view>
+      <text>{{publisher}}</text>
+    </view>
+    <view>
+      <text>{{publish_date}}</text>
+    </view>
+    <view style="display: flex;justify-content:center">
+      修改数量:
+    </view>
+    <view class="stepper">
+      <!-- 减号 -->
+      <text class="sign {{total <= 1 ? 'disabled' : 'normal'}}" bindtap="Dec" data-index="{{index}}">-</text>
+      <!-- 数值 -->
+      <input class="number" type="number" bindchange="bindManual" value="{{total}}" />
+      <!-- 加号 -->
+      <text class="sign {{total >= 10 ? 'disabled' : 'normal'}}" bindtap="Plus" data-index="{{index}}">+</text>
+    </view>
+  </view>
+  <button class="btn_submit" bindtap='onAdd'>确认信息</button>
+</view>
+<modal title="输入条形码" hidden="{{modal_disable}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel">
+  <input id="isbn" name="isbn" type="number" maxlength="13" bindinput="inputISBN" placeholder="请输入13位ISBN条形码" />
+</modal>

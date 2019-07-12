@@ -1,0 +1,80 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.0",
+	"appid": "wx36452542f4b0e018",
+	"projectname": "miniprogram-test-10",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "me_r",
+					"pathName": "pages/me_r/me_r",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "add_r",
+					"pathName": "pages/add_r/add_r",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "first_page",
+					"pathName": "pages/first_page/first_page",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index_m",
+					"pathName": "pages/index_m/index_m",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index_r",
+					"pathName": "pages/index_r/index_r",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

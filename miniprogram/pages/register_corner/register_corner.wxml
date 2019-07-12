@@ -1,0 +1,38 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <text>新建图书角</text>
+    </view>
+  </view>
+</view>
+
+<form>
+  <view class="form-area">
+    <view class="input-box">
+      <image class="icon2" src="../../images/corner_name.png" />
+      <input id="corner_name" name="corner_name" maxlength='10' type="text" bindinput="input_corner_name" placeholder="图书角名字" />
+    </view>
+    <view class="input-box">
+      <image class="icon2" src="../../images/manager_name.png"></image>
+      <input id="manager_name" name="manager_name" type="text" maxlength="8" bindinput="input_manager_name" placeholder="管理员名字" />
+    </view>
+
+    <view class="input-box">
+      <image class="icon2" src="../../images/corner_location.png"></image>
+      <input id="corner_location" name="corner_location" type="text" maxlength="28" bindinput="input_corner_location" placeholder="图书角位置" />
+    </view>
+
+    <view class="input-box">
+      <image class="icon2" src="../../images/circle2.png" />
+      <input id="max_num" name="max_num" maxlength='3' type="number" bindinput="input_max_num" placeholder="最大借阅数" />
+    </view>
+
+     <view class="input-box">
+      <image class="icon2" src="../../images/date.png" />
+      <input id="max_day" name="max_day" maxlength='3' type="number" bindinput="input_max_day" placeholder="最长借阅天数" />
+    </view>
+
+    <button lang="zh_CN" class="btn-submit" formType="submit" bindtap='sumbit_fromdata'>提交</button>
+  </view>
+</form>

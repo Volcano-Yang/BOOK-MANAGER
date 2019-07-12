@@ -1,0 +1,56 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <text>图书角MANAGER</text>
+    </view>
+  </view>
+</view>
+
+<view class='top'>
+  <view class='view_content'>
+    <text>昵称：</text>
+    <open-data type="userNickName"></open-data>
+  </view>
+
+  <open-data type="userAvatarUrl" class='top_image'></open-data>
+</view>
+
+<view class='item'>
+   <!-- <image src='../../images/green.png' class='icon'></image> -->
+   <view class='icon1'></view>
+    <view>个人资料</view>
+</view>
+
+<view class='item'>
+  <view data-type="name" bindtap="handleUpdate" class='view_content'>
+    <text >姓名：{{user.name}}</text>
+  </view>
+</view>
+
+<view class='item'>
+  <view data-type="phone" bindtap="handleUpdate" class='view_content'>
+    <text>手机：{{user.phone}}</text>
+  </view>
+</view>
+
+<view class='item'>
+  <view data-type="department" bindtap="handleUpdate" class='view_content'>
+    <text>班级（部门）：{{user.part}}</text>
+  </view>
+</view>
+
+<view class='item'>
+  <view data-type="id" bindtap="handleUpdate" class='view_content'>
+    <text>学号（工号）：{{user.id}}</text>
+  </view>
+</view>
+
+<view style='margin-bottom:50px;'></view>
+
+<view class='bottom'>点击对应选项修改</view>
+
+<modal title="修改选项" hidden="{{disable}}" confirm-text="确定"
+  cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel">
+    <input bindinput="change" type="text" placeholder="请输入修改内容" />
+</modal> 

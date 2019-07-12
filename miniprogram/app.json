@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/first_page/first_page",
+    "pages/index_r/index_r",
+    "pages/index_m/index_m",
+    "pages/me_r/me_r",
+    "pages/register_corner/register_corner",
+    "pages/bind-book/bind-book",
+    "pages/add_r/add_r",
+    "pages/register_r/register_r"
+  ],
+  "window": {
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "图书角manager",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#A9A9A9",
+    "selectedColor": "#00b26a",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index_r/index_r",
+        "text": "记录",
+        "iconPath": "images/history.png",
+        "selectedIconPath": "images/history.png"
+      },
+      {
+        "pagePath": "pages/add_r/add_r",
+        "text": "借书",
+        "iconPath": "images/add3.png",
+        "selectedIconPath": "images/add3.png"
+      },
+      {
+        "pagePath": "pages/me_r/me_r",
+        "text": "我的",
+        "iconPath": "images/me2.png",
+        "selectedIconPath": "images/me2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

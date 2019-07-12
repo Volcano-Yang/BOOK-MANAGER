@@ -1,0 +1,41 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <text>借阅者注册</text>
+    </view>
+  </view>
+</view>
+
+
+<form>
+  <view class="form-area">
+    <view class="input-box">
+      <image class="icon2" src="../../images/manager_name.png" />
+      <input id="username" name="username" maxlength='8' type="text" bindinput="inputname" placeholder="姓名" />
+    </view>
+
+    <view class="input-box">
+      <image class="icon" src="../../images/phone2.png"></image>
+      <input id="phone" name="phone" type="text" maxlength="11" bindinput="inputPhone" placeholder="手机号" />
+      <button disabled="{{disabledVerify}}" bindtap="sentVerify" size="mini" class="{{btnVerify}}">{{msgVerify}}</button>
+    </view>
+
+    <view class="input-box">
+      <image class="icon2" src="../../images/check.png"></image>
+      <input id="verify" name="verify" type="number" maxlength="6" bindinput="inputverify" placeholder="验证服务尚未开通，可跳过" />
+    </view>
+
+    <view class="input-box">
+      <image class="icon2" src="../../images/corner_name.png" />
+      <input id="username" name="department_class" maxlength='12' type="text" bindinput="inputdepartment_class" placeholder="班级or部门" />
+    </view>
+
+    <view class="input-box">
+      <image class="icon3" src="../../images/id.png" />
+      <input id="username" name="personal_id" maxlength='12' type="text" bindinput="inputpersonal_id" placeholder="学号or工号" />
+    </view>
+
+    <button lang="zh_CN" class="btn-submit" formType="submit" bindtap='sumbit_fromdata'>提交</button>
+  </view>
+</form>

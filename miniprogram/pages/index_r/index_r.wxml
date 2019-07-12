@@ -1,0 +1,72 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <text>图书角MANAGER</text>
+    </view>
+  </view>
+</view>
+
+
+
+<view class='top'>
+  <open-data type="userAvatarUrl" class='top_image'></open-data>
+  <text>昵称：</text>
+  <open-data type="userNickName"></open-data>
+</view>
+
+<view class='area'>
+
+</view>
+
+
+
+
+
+
+
+<view class='item'>
+  <view class='title'>
+    <image src='../../images/green.png'></image>
+    <view>最近借阅的书籍</view>
+  </view>
+
+  <view class='info_area'>
+    <view wx:if="{{!book_record[0]}}" >空空如也~</view>
+    <view wx:for="{{book_record}}" wx:key='book_record' style='margin-bottom:14rpx;'>
+      <view>{{index+1}}: 《{{item.book_name}}》</view>
+      <view> 图书角：{{item.corner_name}}</view> 
+      <view> 借阅日期：{{item.borrow_time}}</view> 
+      <view>最晚归还：{{item.repay_time}}</view>
+    </view>
+  </view>
+
+</view>
+
+<view class='item'>
+  <view class='title'>
+    <image src='../../images/yellow.png'></image>
+    <view>即将到期的借阅书籍</view>
+  </view>
+
+  <view class='info_area'>
+    <text>空空如也~</text>
+  </view>
+
+</view>
+
+
+<view class='item'>
+  <view class='title'>
+    <image src='../../images/red.png'></image>
+    <view>已过期的借阅书籍</view>
+  </view>
+
+  <view class='info_area'>
+    <text>空空如也~</text>
+  </view>
+
+</view>
+
+
+<!-- <image src='../../images/new.png' class='new'></image> -->

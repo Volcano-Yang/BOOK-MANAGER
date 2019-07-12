@@ -1,0 +1,170 @@
+<view class="container" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <text>图书角MANAGER</text>
+    </view>
+  </view>
+</view>
+
+<view class="swiper_top" style=" margin-top:{{statusBarHeight+titleBarHeight+10}}px">
+  <view class="{{_num==0?'active':''}}" data-index='0' bindtap='toggle'>
+    图书角信息
+  </view>
+  <view class="{{_num==1?'active':''}}" data-index='1' bindtap='toggle'>
+    图书数据
+  </view>
+  <view class="{{_num==2?'active':''}}" data-index='2' bindtap='toggle'>
+    借阅数据
+  </view>
+</view>
+
+<swiper current="{{_num}}" duration="200" bindchange="bindChange" class='swiper'>
+  <!-- 图书角信息 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class='swiper_scroll-view'>
+      <!-- 空隙 -->
+      <view style=" margin-top:{{statusBarHeight+titleBarHeight+60}}px"></view>
+      <navigator url='../register_corner/register_corner' class='new_button_card'>
+        +新增管理的图书角
+      </navigator>
+      <view wx:if="{{!corners[0]}}" style="text-align:center; font-size:28rpx;">您还没有管理的图书角</view>
+      <view class='card' wx:if="{{corners[0]}}" wx:for="{{corners}}" wx:for-item="corner" wx:key="i">
+        <view class='table'>
+          <view class='tr'>
+            <text class='td'>图书角名字： </text>
+            <text class='th'>{{corner.title}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>图书角序列号： </text>
+            <text class='th'>{{corner.corner_id}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>最大借阅数： </text>
+            <text class='th'>{{corner.max_num}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>最长借阅时间： </text>
+            <text class='th'>{{corner.max_day}}天 </text>
+          </view>
+
+          <view class='tr' wx:for="{{corner.manager}}" wx:for-item="item" wx:key="index">
+            <text class='td'>管理者{{index+1}}： </text>
+            <text class='th'>{{item.name}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>地点： </text>
+            <text class='th'>{{corner.location}}</text>
+          </view>
+
+        </view>
+      </view>
+
+    </scroll-view>
+
+  </swiper-item>
+
+
+
+  <!-- 图书数据 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class='swiper_scroll-view'>
+      <!-- 空隙 -->
+      <view style=" margin-top:{{statusBarHeight+titleBarHeight+60}}px"></view>
+      <navigator url='../bind-book/bind-book' class='new_button_card'>+新增的图书</navigator>
+      <view class='card' wx:for="{{books}}" wx:key='book_detail'>
+
+        <view class='table'>
+          <view class='tr'>
+            <text class='td'>书名： </text>
+            <text class='th'>《{{item.title}}》</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>作者： </text>
+            <text class='th'>{{item.author}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>出版社： </text>
+            <text class='th'>{{item.publisher}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>出版时间： </text>
+            <text class='th'>{{item.publish_date}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>条码： </text>
+            <text class='th'>{{item.book_isbn}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>全部数量： </text>
+            <text class='th'>{{item.total}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>现存数量： </text>
+            <text class='th'>{{item.total-item.borrowed_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view>
+        <text class='bottom_text'>\n我是有底线的\n\n</text>
+      </view>
+
+    </scroll-view>
+  </swiper-item>
+  <!-- 图书数据 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class='swiper_scroll-view'>
+      <!-- 空隙 -->
+      <view style=" margin-top:{{statusBarHeight+titleBarHeight+60}}px"></view>
+      <view class='borrow_card'>
+        <view class='title'>
+          <image src='../../images/green.png'></image>
+          <view>最近借阅</view>
+        </view>
+      </view>
+
+      <view class='card' wx:for="{{book_record}}" wx:key='book_record'>
+
+        <view class='table'>
+          <view class='tr'>
+            <text class='td'>借阅书名： </text>
+            <text class='th'>{{item.book_name}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>借阅人： </text>
+            <text class='th'>{{item.borrow_name}}</text>
+          </view>
+          <view class='tr'>
+            <text class='td'>借阅时间： </text>
+            <text class='th'>{{item.borrow_time}}</text>
+          </view>
+
+          <view class='tr'>
+            <text class='td'>最晚归还时间： </text>
+            <text class='th'>{{item.repay_time}}</text>
+          </view>
+
+            <view class='tr'>
+            <text class='td'>归还状态： </text>
+            <text class='th'>{{item.state}}</text>
+          </view>
+
+        </view>
+      </view>
+      <view>
+        <text class='bottom_text'>\n我是有底线的\n\n</text>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

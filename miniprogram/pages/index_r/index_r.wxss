@@ -1,0 +1,137 @@
+.container {
+  box-sizing: border-box;
+  height: 100%;
+  background:#ffffff;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background:#ffffff;
+}
+.status-bar {
+  background:#ffffff;
+}
+
+.title-bar {
+  font-size: 34rpx;
+  margin-top: 16rpx;
+  margin-bottom: 10rpx;
+  margin-left: 30rpx;
+  display: flex;
+  align-items: center
+}
+
+
+
+
+page {
+  background-color: #f2f2f2;
+}
+
+
+.top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 46rpx;
+  margin-bottom: 30rpx;
+
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 96%;
+
+  box-shadow: 2px 2px 2px 2px rgb(241, 241, 241);
+  border-radius: 20rpx;
+  border: 1rpx;
+  border-color: #d2d3d3;
+  font-size: 32rpx;
+}
+
+.top_image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+.area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 96%;
+
+  box-shadow: 2px 2px 2px 2px rgb(241, 241, 241);
+  border-radius: 20rpx;
+  border: 1rpx;
+  border-color: #d2d3d3;
+  font-size: 32rpx;
+}
+
+.area_image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+.item {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #ffffff;
+  margin-bottom: 30rpx;
+
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 96%;
+
+  box-shadow: 2px 2px 2px 2px rgb(241, 241, 241);
+  border-radius: 20rpx;
+  border: 1rpx;
+  border-color: #d2d3d3;
+
+
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-size: 34rpx;
+}
+
+.title image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 16rpx;
+}
+
+
+.info_area{
+  margin-left: 120rpx;
+  margin-bottom: 16rpx;
+  color: hsl(0, 4%, 76%);
+  font-size: 30rpx;
+  
+}
+
+.new {
+  width: 120rpx;
+  height: 120rpx;
+  right: 40rpx;
+  bottom: 100rpx;
+  position: fixed;
+}

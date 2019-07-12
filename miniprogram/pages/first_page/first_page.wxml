@@ -1,0 +1,12 @@
+<view style='display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:100rpx;'>
+
+  <image class='avator' src='../../images/logo.png'></image>
+  <text class='text'>欢迎来到“图书角MANAGER”小程序</text>
+
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo1" class='buttom'>进入借阅者模式</button>
+  <view wx:else>请升级微信版本</view>
+
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo2" class='buttom'>进入管理者模式</button>
+  <view wx:else>请升级微信版本</view>
+
+</view>
